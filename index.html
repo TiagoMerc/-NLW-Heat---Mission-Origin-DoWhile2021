@@ -4,69 +4,75 @@
 <html>
   <head>
     <title>NLW Tiago Mercês - DoWhile 2021</title>
-    <link rel="stylesheet" href="style.css" /> 
+    <link rel="stylesheet" href="style.css" />
 
-    <link rel = "preconnect" href = "https://fonts.googleapis.com">
-    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
-<link href = "https: //fonts.googleapis.com/css2? family = Roboto & display = swap "rel =" stylesheet "
-/>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https: //fonts.googleapis.com/css2? family = Roboto & display = swap "
+      rel=" stylesheet "
+    />
   </head>
   <body>
-    <main> 
+    <main>
       <div class="container">
         <div class="avatar">
           <span>
-            <img src="images/build.svg" alt="Selo Rocketseat"/>
+            <img src="images/build.svg" alt="Selo Rocketseat" />
           </span>
-          <img
-            src="https://www.placecage.com/640/360"
-            alt="Foto pessoal"/>
+          <img src="https://www.placecage.com/640/360" alt="Foto pessoal" />
         </div>
 
-        <h1>Maik Brito</h1>
-        <a href="https://github.com/maykbrito" target='_blanck'>
-          <img 
-            src="images/github.svg"
-            alt="ícone github">
-          TiagoMerc</a>
-          <p> An instructor focused on helping pople start programming for web  </p>
-        <ul>
-          <li> 
-            <a href="https://youtube.com/maykbrito"
-              target="_blank">            
-              <img 
-                src="images/youtube.svg" 
-                alt="ícone Youtube"
-             />
+        <h1 id="userName">Maik Brito</h1>
+        <a href="https://github.com/maykbrito" target="_blanck">
+          <img src="images/github.svg" alt="ícone github" />
+          TiagoMerc</a
+        >
+        <p>An instructor focused on helping pople start programming for web</p>
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a href="https://youtube.com/maykbrito" target="_blank">
+              <img src="images/youtube.svg" alt="ícone Youtube" />
             </a>
           </li>
-          <li>
-            <a href="https://facebook.com/maykbrito"   target="_blank">
-              <img src="images/facebook.svg" alt="ícone Facebook"
-              />
-          </a>
-        </li>
-        <li>
-            <a href="https://instagram.com/maykbrito"
-            target="_blank">
-              <img src="images/instagram.svg" alt="ícone Instagram"/>
-          </a>
-        </li>   
-        <li>
-            <a href="https://twitter.com/maykbrito"
-            target="_blank">
-            <img src="images/twitter.svg" alt="ícone Twitter" />
+          <li class="facebook">
+            <a href="https://facebook.com/maykbrito" target="_blank">
+              <img src="images/facebook.svg" alt="ícone Facebook" />
+            </a>
+          </li>
+          <li class="instagram">
+            <a href="https://instagram.com/maykbrito" target="_blank">
+              <img src="images/instagram.svg" alt="ícone Instagram" />
+            </a>
+          </li>
+          <li class="twitter">
+            <a href="https://twitter.com/maykbrito" target="_blank">
+              <img src="images/twitter.svg" alt="ícone Twitter" />
             </a>
           </li>
         </ul>
-
-        </div>
+      </div>
     </main>
 
     <script>
-    
-    const github =" "
-    </script> 
+      const LinksSocialMedia = {
+        github: 'TiagoMerc',
+        youtube: 'TiagoMercêsTiPLAY',
+        facebook: 'maykbrito', //Não tenho Facebook
+        instagram: 'tiagomr.7',
+        twitter: 'TiagoTMR_7'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}` //crases, sinal invertido
+          alert(li.children[0].href)
+        }
+      }
+
+  changeSocialMediaLinks()
+    </script>
   </body>
 </html>
